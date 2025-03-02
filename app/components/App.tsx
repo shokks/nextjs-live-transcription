@@ -32,11 +32,15 @@ const App: () => JSX.Element = () => {
   useEffect(() => {
     if (microphoneState === MicrophoneState.Ready) {
       connectToDeepgram({
-        model: "nova-3",
+        model: "nova-2",
         interim_results: true,
         smart_format: true,
         filler_words: true,
         utterance_end_ms: 3000,
+        language: "multi",
+        diarize: true,
+        diarize_speaker_labels: true, 
+        
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
